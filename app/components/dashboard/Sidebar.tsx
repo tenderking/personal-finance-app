@@ -3,23 +3,23 @@ import IconHouse from '../shared/Icons/IconHouse';
 import IconArrowDownUp from '../shared/Icons/IconArrowDownUp';
 import IconDonut from '../shared/Icons/IconDonut';
 import IconJarFill from '../shared/Icons/IconJarFill';
-import IconWrench from '../shared/Icons/IconWrench';
 import IconArrowFatLeft from '../shared/Icons/IconArrowFatLeft';
 import { useState } from 'react';
+import IconReceipt from '../shared/Icons/IconReceipt';
 
 const menuItems = [
   { icon: IconHouse, label: 'Overview', link: '/overview' },
   { icon: IconArrowDownUp, label: 'Transactions', link: '/transactions' },
   { icon: IconDonut, label: 'Budgets', link: '/budgets' },
-  { icon: IconJarFill, label: 'Reports', link: '/reports' },
-  { icon: IconWrench, label: 'Settings', link: '/settings' },
+  { icon: IconJarFill, label: 'Pots', link: '/reports' },
+  { icon: IconReceipt, label: 'Recurring bills', link: '/settings' },
 ];
 
 export const Sidebar = () => {
   const [minimized, setMinimized] = useState(false);
 
   return (
-    <div className={`sidebar ${minimized ? 'minimized p-8' : 'pr-32 pl-8 py-8'} bg-grey-900 rounded-r-2xl text-grey-300 flex flex-col outline-white justify-between `}>
+    <div className={`sidebar ${minimized ? 'minimized p-8' : 'pr-32 pl-8 py-8'} bg-grey-900 rounded-r-2xl text-grey-300 flex flex-col outline-white justify-between max-w-fit h-screen `}>
       <div className="logo-container mb-4">
 
         {minimized ? (
