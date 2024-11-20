@@ -7,14 +7,18 @@ export interface ButtonProps {
   backgroundColor?: string;
   /** Button contents */
   label: string;
+  name?: string;
   /** Optional click handler */
   onClick?: () => void;
+  type: 'button' | 'submit' | 'reset';
 }
 
 /** Primary UI component for user interaction */
 export const Button = ({
   variant = 'primary',
   label,
+  type = 'button',
+  name,
   ...props
 }: ButtonProps) => {
   const variantClasses = {
@@ -26,7 +30,8 @@ export const Button = ({
 
   return (
     <button
-      type="button"
+      type={type}
+      name={name}
       className={`rounded-lg py-2 px-4 ${variantClasses[variant]} display-flex items-center justify-center`}
       {...props}
     >
