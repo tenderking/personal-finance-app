@@ -5,13 +5,15 @@ import IconDonut from '../shared/Icons/IconDonut';
 import IconJarFill from '../shared/Icons/IconJarFill';
 import IconReceipt from '../shared/Icons/IconReceipt';
 
+
 const menuItems = [
-  { icon: IconHouse, label: 'Overview', link: '/overview' },
+  { icon: IconHouse, label: 'Overview', link: '/' },
   { icon: IconArrowDownUp, label: 'Transactions', link: '/transactions' },
   { icon: IconDonut, label: 'Budgets', link: '/budgets' },
-  { icon: IconJarFill, label: 'Pots', link: '/reports' },
-  { icon: IconReceipt, label: 'Recurring bills', link: '/settings' },
+  { icon: IconJarFill, label: 'Pots', link: '/pots' },
+  { icon: IconReceipt, label: 'Recurring bills', link: '/recurring_bills' },
 ];
+
 
 export const SidebarTabletMobile = () => {
   return (

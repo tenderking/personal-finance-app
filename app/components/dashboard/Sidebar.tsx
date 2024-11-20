@@ -8,11 +8,11 @@ import { useState } from 'react';
 import IconReceipt from '../shared/Icons/IconReceipt';
 
 const menuItems = [
-  { icon: IconHouse, label: 'Overview', link: '/overview' },
+  { icon: IconHouse, label: 'Overview', link: '/' },
   { icon: IconArrowDownUp, label: 'Transactions', link: '/transactions' },
   { icon: IconDonut, label: 'Budgets', link: '/budgets' },
-  { icon: IconJarFill, label: 'Pots', link: '/reports' },
-  { icon: IconReceipt, label: 'Recurring bills', link: '/settings' },
+  { icon: IconJarFill, label: 'Pots', link: '/pots' },
+  { icon: IconReceipt, label: 'Recurring bills', link: '/recurring_bills' },
 ];
 
 export const Sidebar = () => {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BrowserRouter } from 'react-router-dom'; 
-import { SidebarTabletMobile } from './SidebarTabletMobile';
+import { BrowserRouter } from 'react-router-dom';
+import { SidebarTabletMobile } from '~/components/dashboard/SidebarTabletMobile';
 
 const meta: Meta<typeof SidebarTabletMobile> = {
   title: 'shared/Sidebar Tablet Mobile',
@@ -19,9 +19,9 @@ export const Primary: Story = {
 
   name: 'Primary',
 
-  render: () => ( 
-    <BrowserRouter> 
-      <SidebarTabletMobile /> 
+  render: () => (
+    <BrowserRouter>
+      <SidebarTabletMobile />
     </BrowserRouter>
   )
 };
