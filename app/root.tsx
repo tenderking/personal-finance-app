@@ -1,11 +1,6 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import DashboardLayout from "~/components/dashboard/Layout";
 
 import "./tailwind.css";
 
@@ -22,7 +17,15 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+
+
+export default function App() {
+  const location = useLocation();
+
+  // Check if the current route is "/login"
+  const isLoginRoute = location.pathname === "/login";
+
+
   return (
     <html lang="en">
       <head>
@@ -32,14 +35,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        {isLoginRoute ? (
+          // No layout for login route
+          <Outlet />
+        ) : (
+          // Use the dashboard layout for all other routes
+          <DashboardLayout>
+            <Outlet />
+          </DashboardLayout>
+        )}
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
