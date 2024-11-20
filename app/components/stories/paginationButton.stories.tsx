@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PaginationButton } from './PaginationButton';
+import { PaginationButton } from '~/components/shared/PaginationButton';
 
 const meta: Meta<typeof PaginationButton> = {
   title: 'shared/PaginationButton',
