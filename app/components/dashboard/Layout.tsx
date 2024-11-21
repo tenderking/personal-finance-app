@@ -13,8 +13,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     "/budgets": "Budgets",
   };
 
-  // Get the label for the current route or a default fallback
-  const currentRouteLabel = routeLabels[location.pathname] || "Unknown Route";
+  const currentRouteLabel = routeLabels[location.pathname]
   return (
     <div className="lg:flex bg-beige-100">
       <aside className="sidebar"><ResponsiveSidebar /></aside>

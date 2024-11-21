@@ -20,9 +20,7 @@ const meta: Meta<typeof AuthForm> = {
       return <RouterProvider router={router} />;
     },
   ],
-  args: {
-    onSubmit: () => alert('Form Submitted'),
-  },
+
 };
 
 export default meta;

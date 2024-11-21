@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import IconArrowRight from "./Icons/IconArrowRight";
 
 export interface ButtonProps {
@@ -10,15 +11,18 @@ export interface ButtonProps {
   name?: string;
   /** Optional click handler */
   onClick?: () => void;
-  type: 'button' | 'submit' | 'reset';
+  type: 'button' | 'submit' | 'reset' | "link";
+  /** Optional link */
+  href?: string;
 }
 
 /** Primary UI component for user interaction */
 export const Button = ({
   variant = 'primary',
   label,
-  type = 'button',
+  type,
   name,
+  href,
   ...props
 }: ButtonProps) => {
   const variantClasses = {
@@ -29,17 +33,31 @@ export const Button = ({
   };
 
   return (
-    <button
-      type={type}
-      name={name}
-      className={`rounded-lg py-2 px-4 ${variantClasses[variant]} display-flex items-center justify-center`}
-      {...props}
-    >
-      <span className="flex items-center justify-center">
-
-        {label}
-        {variant === 'tertiary' && <IconArrowRight className="ml-2 0" />}
-      </span>
-    </button>
+    <>
+      {type === 'link' ? (
+        <Link
+          to={href || ""}
+          className={`rounded-lg py-2 px-4 ${variantClasses[variant]} display-flex items-center justify-center`}
+          {...props}
+        >
+          <span className="flex items-center justify-center">
+            {label}
+            {variant === 'tertiary' && <IconArrowRight className="ml-2 0" />}
+          </span>
+        </Link>
+      ) : (
+        <button
+          type={type}
+          name={name}
+          className={`rounded-lg py-2 px-4 ${variantClasses[variant]} display-flex items-center justify-center`}
+          {...props}
+        >
+          <span className="flex items-center justify-center">
+            {label}
+            {variant === 'tertiary' && <IconArrowRight className="ml-2 0" />}
+          </span>
+        </button>
+      )}
+    </>
   );
 };

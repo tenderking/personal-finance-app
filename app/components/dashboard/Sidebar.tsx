@@ -19,7 +19,7 @@ export const Sidebar = () => {
   const [minimized, setMinimized] = useState(false);
 
   return (
-    <div className={`sidebar ${minimized ? 'minimized p-8' : 'pr-32 pl-8 py-8'} bg-grey-900 rounded-r-2xl text-grey-300 flex flex-col outline-white justify-between max-w-fit h-screen `}>
+    <div className={`sidebar ${minimized ? 'minimized p-8' : 'pr-32 pl-8 py-8'} bg-grey-900 rounded-r-2xl text-grey-300 flex flex-col outline-white justify-between max-w-fit min-h-screen `}>
       <div className="logo-container mb-4">
 
         {minimized ? (
@@ -29,12 +29,14 @@ export const Sidebar = () => {
         )}
       </div>
       <nav> {/* Use <nav> for better semantics */}
-        <ul className="flex flex-col space-y-4 mb-4"> 
+        <ul className="flex flex-col space-y-4 mb-4">
           {menuItems.map((item, index) => (
-            <li key={index} className="flex items-center   text-grey-300 hover:text-grey-100 fill-grey-300 hover:fill-grey-100"> 
+            <li key={index} className="flex items-center   text-grey-300 hover:text-grey-100 fill-grey-300 hover:fill-grey-100">
               <Link to={item.link} className="flex items-center fill-inherit"> {/* Wrap icon and label in Link */}
-                <item.icon className="mr-2 0 fill-current"  /> 
-                {!minimized && item.label} 
+                <item.icon className="mr-2 0 fill-current" />
+                <span className='min-w-max'>
+                  {!minimized && item.label}
+                </span>
               </Link>
             </li>
           ))}
@@ -44,7 +46,7 @@ export const Sidebar = () => {
         onClick={() => setMinimized(!minimized)}
         onKeyDown={(e) => { if (e.key === 'Enter') setMinimized(!minimized); }}
         aria-label={minimized ? "Expand Menu" : "Minimize Menu"}
-        className="sidebar-toggle-button flex items-center gap-2 text-grey-300 hover:text-grey-100 fill-grey-300 hover:fill-grey-100" 
+        className="sidebar-toggle-button flex items-center gap-2 text-grey-300 hover:text-grey-100 fill-grey-300 hover:fill-grey-100"
       >
         <IconArrowFatLeft className={`transition-transform ${minimized ? 'rotate-180' : ''}`} />
         {!minimized && <span>Minimize Menu</span>}
