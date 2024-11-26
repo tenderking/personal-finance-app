@@ -1,6 +1,7 @@
 import { Button } from "~/components/shared/Button";
 import { BrowserRouter as Router } from 'react-router-dom';
 import IconJarFill from "~/components/shared/Icons/IconJarFill";
+import AmountItem from "~/components/shared/AmountItem";
 
 interface PotsWidgetProps {
   seeDetailsUrl: string,
@@ -13,7 +14,7 @@ interface PotsWidgetProps {
 
 }
 export const PotsWidget = ({ seeDetailsUrl, totalSavings, pots }: PotsWidgetProps) => {
-  const defaultColors = ['bg-green', 'bg-cyan', 'bg-navy', 'bg-yellow']
+  const defaultColors = ['green', 'cyan', 'navy', 'yellow']
   return (
     <Router>
       <div className="flex flex-col gap-4 items-center justify-center rounded-lg p-4 bg-white text-black">
@@ -36,13 +37,9 @@ export const PotsWidget = ({ seeDetailsUrl, totalSavings, pots }: PotsWidgetProp
 
           </div>
 
-          <div className="mr-auto grid grid-cols-2 gap-2 mt-4">
+          <div className="mr-auto grid grid-cols-2  gap-2 mt-4">
             {pots.map((pot, index) => (
-              <div key={pot.name} className={`relative  flex flex-col  gap-2 items-start justify-center  p-2 text-black`}>
-                <div className={`absolute inset-y-0 left-0 w-2 ${defaultColors[index]} rounded-full`}></div>
-                <h3 className="text-xs min-w-max text-grey-500 ml-4">{pot.name}</h3>
-                <p className="text-lg font-bold text-black-600 ml-4">{new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(pot.amount)}</p>
-              </div>
+              <AmountItem key={pot.name} name={pot.name} amount={pot.amount} color={defaultColors[index]} />
             )
             )}
           </div>
