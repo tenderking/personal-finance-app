@@ -5,19 +5,17 @@ import DashboardLayout from "~/components/dashboard/Layout";
 import styles from "./tailwind.css?url";
 
 export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
   { rel: "stylesheet", href: styles },
 ];
 
 
 
 export default function App() {
+
+
+
   const location = useLocation();
+
 
   // Check if the current route is "/login"
   const isLoginRoute = location.pathname === "/login";

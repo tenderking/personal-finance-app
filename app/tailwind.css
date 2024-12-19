@@ -1,3 +1,4 @@
+@import url('./style/stylesheet.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +11,6 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: light;
   }
+  font-size: 14px;
 }
-
-
 

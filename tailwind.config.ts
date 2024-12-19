@@ -6,14 +6,7 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          '"Inter"',
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
+          'Public Sans',
         ],
       },
         colors: {
@@ -27,8 +20,8 @@ export default {
           500: '#696868',
           900: '#201F24',
         },
-        'green': '#277C78',
         'yellow': '#F2CDAC',
+        'green': '#277C78',
         'cyan': '#82C9D7',
         'navy': '#626070',
         'red': '#C94736',
