@@ -25,7 +25,7 @@ export const Primary: Story = {
   args: {
     name: 'Current Balance',
     amount: 1000,
-    color: 'cyan'
+    color: 'green'
   },
 
 };

@@ -125,7 +125,7 @@ export const BudgetsWidget = ({
         </div>
         <div className="mr-auto grid grid-cols-2  md:grid-cols-1 gap-2 max-h-min mt-4">
           {budgets.map((budget, index) => (
-            <AmountItem key={budget.name} name={budget.name} amount={budget.amount} color={[Object.values(colors)[index]]} />
+            <AmountItem key={budget.name} name={budget.name} amount={budget.amount} color={Object.keys(colors)[index]} />
           ))}
         </div>
       </div>
