@@ -74,8 +74,14 @@ export const BudgetsWidget = ({
         options: {
           cutout: '65%',
           radius: '90%',
+          plugins: {
+            legend: {
+              display: false // Disable the legend
+            }
+          }
         },
         plugins: [{
+
           id: 'customText',
           beforeDraw(chart) {
             const { width, height, ctx } = chart;
@@ -119,7 +125,7 @@ export const BudgetsWidget = ({
       <div className='flex md:flex-row flex-col'>
         <div className='max-w-80 flex items-center justify-center'>
           <ClientOnly fallback={<Fallback />}>
-            {() => <canvas id="myChart" ref={chartRef}></canvas>}
+            {() => <canvas id="myChart" width="200" height="200" ref={chartRef}></canvas>}
           </ClientOnly>
 
         </div>
