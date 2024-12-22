@@ -1,9 +1,10 @@
 import { Link } from "@remix-run/react";
 import IconArrowRight from "./Icons/IconArrowRight";
+import IconArrowDown from "./Icons/IconArrowDown";
 
 export interface ButtonProps {
   /** Button variant */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'destroy';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'destroy' | 'select';
   /** What background color to use */
   backgroundColor?: string;
   /** Button contents */
@@ -30,6 +31,7 @@ export const Button = ({
     secondary: 'bg-beige-100 hover:bg-white text-black border border-grey-900',
     tertiary: 'bg-none text-grey-500 hover:text-grey-900 fill-grey-500 hover:fill-grey-900',
     destroy: 'bg-red hover:bg-red-200 text-white',
+    select: 'bg-white text-grey-900 border border-grey-900 fill-grey-900',
   };
 
   return (
@@ -55,6 +57,7 @@ export const Button = ({
           <span className="flex items-center justify-center">
             {label}
             {variant === 'tertiary' && <IconArrowRight className="ml-2 0" />}
+            {variant === 'select' && <IconArrowDown className="ml-2 0" />}
           </span>
         </button>
       )}

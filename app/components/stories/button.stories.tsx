@@ -50,3 +50,10 @@ export const Destory: Story = {
     label: 'Button',
   },
 };
+
+export const Select: Story = {
+  args: {
+    variant: 'select',
+    label: 'Button',
+  },
+};
