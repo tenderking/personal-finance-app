@@ -14,27 +14,26 @@ interface CustomSelectProps {
 
 const CustomSelect: React.FC<CustomSelectProps> = ({ options, onChange, placeholder }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
+  const dropdownRef = React.useRef<HTMLUListElement>(null);
 
   const handleChange = (value: string) => {
     setSelectedOption(value);
     onChange(value);
-    const dropdown = document.querySelector('.custom-select-options');
-    if (dropdown) {
-      dropdown.classList.toggle('hidden');
+    if (dropdownRef.current) {
+      dropdownRef.current.classList.toggle('hidden');
     }
   };
 
   const showDropdown = () => {
-    const dropdown = document.querySelector('.custom-select-options');
-    if (dropdown) {
-      dropdown.classList.toggle('hidden');
+    if (dropdownRef.current) {
+      dropdownRef.current.classList.toggle('hidden');
     }
   };
 
   return (
-    <div className="custom-select min-w-36   relative">
+    <div className="custom-select min-w-36 relative">
       <Button variant="select" label={selectedOption || placeholder || 'Select'} type="button" onClick={showDropdown} />
-      <ul className="custom-select-options hidden rounded-md border border-grey-900  bg-white z-10 w-full absolute top-12">
+      <ul ref={dropdownRef} className="custom-select-options hidden rounded-md border border-grey-900 bg-white z-10 w-full absolute top-12">
         {options.map((option) => (
           <li
             key={option.value}
@@ -44,7 +43,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ options, onChange, placehol
             {option.label}
           </li>
         ))}
-
       </ul>
     </div>
   );
