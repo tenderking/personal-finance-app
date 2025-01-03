@@ -2,7 +2,6 @@ import { Button } from "~/components/shared/Button";
 import IconJarFill from "~/components/shared/Icons/IconJarFill";
 import AmountItem from "~/components/shared/AmountItem";
 import { useState, useEffect } from "react";
-import { MemoryRouter } from 'react-router-dom';
 
 
 interface PotsWidgetProps {
@@ -27,14 +26,14 @@ export const PotsWidget = ({ seeDetailsUrl, totalSavings, pots }: PotsWidgetProp
     return null;
   }
   return (
-    <div className="flex flex-col  gap-4 items-center justify-center rounded-lg p-4 bg-white text-black">
+    <div className="flex  flex-col  gap-4 items-center justify-center rounded-lg p-4 bg-white text-black">
       {/* Header Div */}
       <div className="flex items-center justify-between w-full">
         <h3 className="text-xl  font-bold text-grey-900">Pots</h3>
         <Button label="See details" variant="tertiary" type="link" href={seeDetailsUrl} />
       </div>
       {/* Content Div */}
-      <div className="flex flex-col  items-center p-0 m-0  gap-0 justify-start  md:flex-row ">
+      <div className="flex   flex-col  items-center p-0 m-0 lg:gap-0   gap-8 md:justify-start md: md:flex-row ">
         {/* Total Saved Div */}
         <div className="grid grid-cols-3 gap-2 items-center h-full   max-w-100 rounded-lg p-8 my-0  bg-beige-100 text-black">
           <IconJarFill className="row-span-2 w-12 h-12 text-green-600 stroke-green stroke-1 " />

@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const currentRouteLabel = routeLabels[location.pathname]
   return (
     <div className="lg:flex bg-beige-100">
-      <aside className="sidebar h-dvh sticky top-0 "><ResponsiveSidebar /></aside>
+      <aside className="sidebar lg:h-dvh sticky top-0 z-50 "><ResponsiveSidebar /></aside>
       <main className="content p-4 w-screen">
         <header className="header py-4"><h1 className="text-bold">
           {currentRouteLabel}

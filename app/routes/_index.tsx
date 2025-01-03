@@ -8,12 +8,12 @@ import { TransactionWidget } from "~/features/transactions/components/Transactio
 const Index = () => {
   return (
     <div>
-      <div className="flex justify-between  gap-4 p-4">
+      <div className="flex justify-between flex-col md:flex-row  gap-4 p-4">
         <KPIWidget title="Current Balance" value={600} color="black" />
         <KPIWidget title="Total Revenue" value={3000} color="white" />
         <KPIWidget title="Total Expenses" value={2400} color="white" />
       </div>
-      <div className="grid grid-cols-[1fr,auto] grid-rows-3 gap-4 p-4 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto] grid-rows-3 gap-4 p-4 items-start">
         <div className="flex flex-col justify-start gap-4">
 
           <PotsWidget pots={[
